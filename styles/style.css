@@ -1,3 +1,6 @@
+/* Importando o reset css */
+@import 'reset.css';
+
 /* Importando a fonte Poppins */
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
@@ -35,4 +38,8 @@ body {
 
 .food {
   background-color: #d84242; /* define a cor da comida */
+}
+
+#pontuation {
+  padding-bottom: 1vmax;
 }
