@@ -1,0 +1,38 @@
+/* Importando a fonte Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
+body {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0;
+    
+  background-color: rgb(232, 232, 232); /* define a cor de fundo */
+  font-family: 'Poppins', sans-serif; /* define a fonte principal */
+}
+
+#game-board {
+  background-color: hsl(0, 0%, 12%); /* define a cor de fundo */
+  border: 1vmin hsl(0, 0%, 8%) solid; /* define uma borda ao redor do mapa */
+
+  width: 80vmin;
+  height: 80vmin;
+
+  display: grid;
+  grid-template-rows: repeat(21, auto);
+  grid-template-columns: repeat(21, auto);
+}
+
+.snake {
+  background-color: #7FB069; /* define a cor da cobrinha */
+}
+
+.food {
+  background-color: #d84242; /* define a cor da comida */
+}
