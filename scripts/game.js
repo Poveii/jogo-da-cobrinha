@@ -22,7 +22,7 @@ function main(currentTime) {
   if (gameOver) {
     // se der Game Over...
     if (confirm('Game Over')) {
-      location = '/' // retorna para o início do jogo
+      location.reload() // retorna para o início do jogo
     }
     return
   }
