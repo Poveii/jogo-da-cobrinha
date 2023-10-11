@@ -9,15 +9,23 @@ body {
   width: 100vw;
   height: 100vh;
 
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 80vmin 250px;
   align-items: center;
   justify-content: center;
+  gap: 1rem;
 
   margin: 0;
     
   background-color: rgb(232, 232, 232); /* define a cor de fundo */
   font-family: 'Poppins', sans-serif; /* define a fonte principal */
+}
+
+#game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 #game-board {
@@ -42,4 +50,10 @@ body {
 
 #pontuation {
   padding-bottom: 1vmax;
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  body {
+    flex-direction: column;
+  }
 }

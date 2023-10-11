@@ -9,6 +9,7 @@ import {
 import { update as updateFood, draw as drawFood } from './food.js'
 
 import { outsideGrid } from './grid.js' // importa o arquivo do mapa (grid)
+import { getAllScores, getScore, saveScore } from './score.js'
 
 
 const gameBoard = document.getElementById('game-board') // define gameBoard como o game-board do HTML
@@ -18,10 +19,22 @@ let gameOver = false // define o "não fim do jogo"
 
 requestAnimationFrame(main)
 
+const allScores = getAllScores() // pega todos os scores
+// se tiver scores, coloca em tela ordenado pelo maior
+if (allScores.length >= 1) {
+  const scores = allScores.sort((a, b) => b - a).reduce((acc, score) => {
+    return acc + ', ' + score
+  }, allScores[0])
+
+  document.getElementById('scores').innerHTML = scores
+}
+
 function main(currentTime) {
   if (gameOver) {
     // se der Game Over...
     if (confirm('Game Over')) {
+      const score = getScore()
+      saveScore(score) // salva o score no localStorage
       location.reload() // retorna para o início do jogo
     }
     return
