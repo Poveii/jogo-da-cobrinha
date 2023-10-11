@@ -23,7 +23,8 @@ const allScores = getAllScores() // pega todos os scores
 // se tiver scores, coloca em tela ordenado pelo maior
 if (allScores.length >= 1) {
   const scores = allScores.sort((a, b) => b - a).reduce((acc, score) => {
-    return acc + ', ' + score
+    if (acc !== score) acc += ', ' + score
+    return acc
   }, allScores[0])
 
   document.getElementById('scores').innerHTML = scores
